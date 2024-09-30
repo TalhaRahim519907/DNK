@@ -1,0 +1,635 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lato", sans-serif;
+}
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1;
+}
+.navbar .logo {
+  float: left;
+  padding: 10px;
+}
+.navbar .menu-icon {
+  display: none;
+  float: right;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.navbar .list-left {
+  float: left;
+}
+.navbar .list-left a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+.navbar .list-right {
+  float: right;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+.navbar .list-right a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-family: system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+.navbar .icon {
+  font-size: 20px;
+  float: right;
+  padding: 14px 16px;
+  color: black;
+  cursor: pointer;
+}
+.icons-position {
+  display: flex;
+  align-items: center;
+}
+#offcanvas-menu {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f6f2f2;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 1;
+}
+#offcanvas-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+#offcanvas-menu li {
+  padding: 25px;
+  text-align: center;
+}
+#offcanvas-menu a {
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+#menu-button {
+  position: absolute;
+  top: -8px;
+  right: 13px;
+  cursor: pointer;
+  z-index: 1;
+}
+#close-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.5rem;
+}
+.checkout-container {
+  background-color: #abb8c325;
+  padding: 6rem 5.25rem;
+  /* height: 100vh; */
+}
+.checkout-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-heading h1 {
+  color: #54595f;
+  font-size: 3.5em;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+.user-login {
+  border-top: 3px solid black;
+  background-color: rgb(241, 241, 241);
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  /* display: none; */
+}
+.login-link {
+  display: inline-block;
+  width: 100%;
+}
+.login-link p {
+  display: inline-block;
+  margin-left: 10px;
+  color: #515151;
+}
+.login-link a {
+  text-decoration: none;
+  color: black;
+}
+.login-link a:hover {
+  color: rgb(66, 66, 204);
+  transition: 0.2s ease-in-out;
+}
+
+.login-credentials {
+  display: none;
+  margin-bottom: 2rem;
+}
+.login-credentials .login-text {
+  margin: 2rem 0rem;
+}
+.login-inputs {
+  margin-bottom: 1rem;
+}
+.user-input,
+.password-input {
+  display: inline-block;
+  width: 45%;
+}
+.password-input {
+  margin-left: 6rem;
+}
+.login-inputs input {
+  width: 100%;
+  padding: 0.85rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+}
+.login-inputs p {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.check-box {
+  margin-bottom: 10px;
+}
+.check-box label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.login-btn {
+  margin-bottom: 1rem;
+}
+.login-btn button {
+  padding: 1rem 1.75rem;
+  background-color: #4368d6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.login-btn button:hover {
+  background-color: #265af3;
+}
+.lost-password a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.lost-password a:hover {
+  color: #265af3;
+  transition: 0.2s ease-in-out;
+}
+
+.user-coupon {
+  border-top: 3px solid black;
+  background-color: rgb(241, 241, 241);
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  /* display: none; */
+}
+.coupon-link {
+  display: inline-block;
+  width: 100%;
+}
+.coupon-link p {
+  display: inline-block;
+  margin-left: 10px;
+  color: #515151;
+}
+.coupon-link a {
+  text-decoration: none;
+  color: black;
+}
+.coupon-link a:hover {
+  color: rgb(66, 66, 204);
+  transition: 0.2s ease-in-out;
+}
+.coupon-input {
+  display: none;
+  margin-bottom: 2rem;
+}
+.coupon-input input {
+  padding: 0.75rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+  width: 25%;
+}
+.coupon-input p {
+  margin: 2rem 0rem;
+}
+.coupon-input .apply-btn {
+  font-weight: bold;
+  color: white;
+  background-color: #6485e7;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.coupon-input .apply-btn:hover {
+  background-color: #265af3;
+}
+
+.order-details {
+  display: flex;
+  margin-top: 3rem;
+}
+.billing-details {
+  display: inline-block;
+  width: 55%;
+  padding: 1.25rem;
+}
+.billing-details p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.billing-details hr {
+  margin: 1rem 0rem;
+  border: 1px solid #e2e2e2;
+}
+.billing-details .fname,
+.lname {
+  display: inline-block;
+  width: 46%;
+}
+.lname {
+  margin-left: 2.45rem;
+}
+.name-inputs {
+  margin-bottom: 1.25rem;
+}
+.name-inputs input {
+  width: 100%;
+  padding: 0.85rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+}
+.dropdown-input {
+  margin-bottom: 1.25rem;
+}
+.dropdown-form .select {
+  width: 100%;
+  padding: 0.75rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+  cursor: pointer;
+}
+.dropdown-form .select option {
+  border-radius: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.billing-input input {
+  width: 100%;
+  padding: 0.85rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 1.25rem;
+}
+.order-note textarea {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+}
+.error-summary {
+  color: red;
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-color: rgb(241, 241, 241);
+}
+input:invalid {
+  border-color: red;
+}
+/* .field-name {
+  color: black; 
+} */
+
+/* Style the input field names in black */
+/* input[type="text"]:not(:invalid), */
+/* select:not(:invalid) { */
+/* border-color: black; Set the border color to black */
+/* color: black; Set the text color to black */
+/* } */
+.your-order {
+  display: inline-block;
+  border: 1px solid #e2e2e2;
+  width: 40%;
+  padding: 1.75rem;
+  margin-left: 3rem;
+  height: 100%;
+}
+.your-order hr {
+  margin: 1.25rem 0rem;
+  border: 1px solid #e2e2e2;
+}
+.order-heading h4 {
+  display: inline-block;
+}
+.order-heading {
+  margin-top: 1.75rem;
+}
+.order-heading .order-total {
+  float: right;
+}
+.your-order .product p {
+  display: inline-block;
+}
+.your-order .product .price {
+  float: right;
+}
+.order-checkbox .radio-btn {
+  margin-bottom: 0.75rem;
+}
+.order-btn button {
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  background-color: #3660dd;
+  padding: 1rem 0rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.order-btn button:hover {
+  background-color: #1746d4;
+  transition: 0.3s ease-in-out;
+}
+
+/* section-7 */
+.sale-update {
+  padding: 40px 0px 40px 70px;
+}
+.sale-text h1 {
+  font-weight: 600;
+}
+.sale-text h1:hover {
+  color: blue;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.sale-update hr {
+  border: 1px solid grey;
+  height: 0.5px;
+}
+
+/* section-8 */
+.footer {
+  color: black;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.footer-text img {
+  height: 30px;
+  margin-bottom: 40px;
+}
+.footer .content {
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+.footer .content p {
+  margin-bottom: 10px;
+}
+.footer .content a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.51);
+}
+.footer .content a:hover {
+  color: blue;
+  transition: 0.3s ease-in-out;
+}
+.footer .content h4 {
+  margin-bottom: 1.3rem;
+  font-size: 22px;
+  font-weight: 500;
+}
+.email-input input {
+  border-radius: none;
+  background-color: whitesmoke;
+  border: 1px solid rgb(233 226 226);
+  margin-bottom: 25px;
+  padding: 20px 15px;
+  width: 18vw;
+  height: 25px;
+  outline: none;
+}
+.subscribe-btn {
+  display: block;
+  padding: 13px 20px;
+  border: none;
+  border-radius: none;
+  background-color: rgb(81, 81, 248);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.subscribe-btn:hover {
+  background-color: blue;
+  transition: 0.3s ease-in-out;
+}
+footer {
+  margin-bottom: 1.5rem;
+}
+footer .copyright {
+  display: inline-block;
+  margin-left: 5rem;
+}
+footer .social-icons {
+  float: right;
+  margin-right: 5rem;
+}
+.social-icons i {
+  font-size: 20px;
+  color: #000;
+  margin: 0px 15px;
+}
+.social-icons i:hover {
+  color: blue;
+  transition: 0.2s ease-in-out;
+}
+footer hr {
+  margin: 2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .coupon-input input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .coupon-input .apply-btn {
+    width: 100%;
+  }
+  /* section-7 */
+  .sale-text h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 786px) {
+  /* section-8 */
+  .footer .content {
+    display: block;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .footer-text {
+    margin-top: 55px;
+  }
+  .email-input input {
+    width: 90%;
+  }
+  .subscribe-btn {
+    display: inline-block;
+  }
+
+  footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+  }
+  footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: none;
+    margin-right: 0rem;
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  .navbar {
+    display: block;
+    height: auto;
+    padding: 0rem;
+  }
+  .navbar .list-left,
+  .navbar .list-right a {
+    display: none;
+  }
+  .navbar .list-right {
+    padding-bottom: 20px !important;
+  }
+  .navbar .logo {
+    float: none;
+    display: inline-block;
+    padding-top: 23px;
+  }
+  .navbar .menu-icon {
+    display: block;
+    font-size: 33px;
+    font-weight: bold;
+    padding-top: 27px;
+  }
+  .navbar .icon {
+    display: block;
+    font-weight: bold;
+  }
+  .navbar.responsive .list-left,
+  .navbar.responsive .list-right {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .navbar.responsive .list-left a,
+  .navbar.responsive .list-right a {
+    float: none;
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+  .icons-position {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+  }
+
+  .user-input,
+  .password-input {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0rem;
+  }
+  .checkout-container {
+    padding: 6rem 1.25rem;
+  }
+  .order-details {
+    display: block;
+  }
+  .billing-details {
+    width: 100%;
+    padding: 0rem;
+    margin-bottom: 2rem;
+  }
+  .your-order {
+    width: 100%;
+    margin-left: 0rem;
+    padding: 0.75rem;
+  }
+  /* section-7 */
+  .sale-update {
+    padding: 35px 0px 35px 20px;
+  }
+
+  /* section-8 */
+  .social-icons i {
+    margin: 0px 10px;
+  }
+  footer .copyright {
+    margin-left: 2rem;
+  }
+  footer .social-icons {
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .billing-details .fname,
+  .lname {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0rem;
+  }
+  .billing-details .fname {
+    margin-bottom: 1rem;
+  }
+  .user-input,
+  .password-input {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0rem;
+  }
+}

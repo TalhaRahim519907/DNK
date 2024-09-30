@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <section>
+      <div class="navbar" id="myNavbar">
+        <div class="logo">
+          <a href="../home.html"><img src="../images/logo2.png" alt="Logo" /></a>
+        </div>
+        <div class="menu-icon" id="menu-button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="list-left">
+          <a href="../Everything/everything.html">EVERYTHING</a>
+          <a href="../Women/women.html">WOMEN</a>
+          <a href="../Men/men.html">MEN</a>
+          <a href="../Accessories/accessories.html">ACCESSORIES</a>
+        </div>
+        <div class="list-right">
+          <a href="../AboutUs/about.html">ABOUT</a>
+          <a href="../ContactUs/contact.html">CONTACT US</a>
+          <div class="icons-position">
+            <div class="icon"><h4>$0.00</h4></div>
+            <div class="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="icon hide_on_small_screen">
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+        </div>
+        <div id="offcanvas-menu">
+          <ul style="float: left; padding-top: 50px">
+            <li style="text-align: left">
+              <a href="#" class=""
+                ><i class="fa-solid fa-user" style="font-size: 50px"></i
+              ></a>
+            </li>
+            <li style="text-align: left"><a href="../Everything/everything.html">EVERYTHING</a></li>
+            <li style="text-align: left"><a href="../Women/women.html">WOMEN</a></li>
+            <li style="text-align: left"><a href="../Men/men.html">MEN</a></li>
+            <li style="text-align: left"><a href="../Accessories/accessories.html">ACCESSORIES</a></li>
+            <li style="text-align: left"><a href="../AboutUs/about.html">ABOUT</a></li>
+            <li style="text-align: left"><a href="../ContactUs/contact.html">CONTACT US</a></li>
+          </ul>
+          <span id="close-button">&#10006;</span>
+        </div>
+      </div>
+      <div class="checkout-container">
+        <div class="checkout-heading">
+          <h1>CheckOut</h1>
+        </div>
+        <div class="user-login">
+          <div class="login-link">
+            <i class="fa-regular fa-square"></i>
+            <p>Returning Customer?</p>
+            <a href="#" id="clickLink">Click here to login </a>
+          </div>
+        </div>
+        <div class="login-credentials" id="login-part">
+          <p class="login-text">
+            If you have shopped with us before, please enter your details below.
+            If you are a new customer, please proceed to the Billing section.
+          </p>
+          <!-- <div class="login-inputs">
+            <div class="user-input">
+              <p>UserName or Email*</p>
+              <input type="email" name="" id="" />
+            </div>
+            <div class="password-input">
+              <p>Password*</p>
+              <input type="password" name="" id="" />
+            </div>
+          </div>
+          <div class="check-box">
+            <input type="checkbox" id="" name="" value="" checked/>
+            <label for=""> Remember me</label><br />
+          </div>
+          <div class="login-btn">
+            <button>LOGIN</button>
+          </div> -->
+          <div class="login-inputs">
+            <div class="user-input">
+              <p>UserName or Email*</p>
+              <input type="email" id="emailInput" />
+              <div class="error" id="emailError"></div>
+            </div>
+            <div class="password-input">
+              <p>Password*</p>
+              <input type="password" id="passwordInput" placeholder="Minimum 8 characters, at least one letter and one number"/>
+              <div class="error" id="passwordError"></div>
+            </div>
+          </div>
+          <div class="check-box">
+            <input type="checkbox" id="rememberCheckbox" checked/>
+            <label for="rememberCheckbox"> Remember me</label><br />
+          </div>
+          <div class="login-btn">
+            <button id="loginButton">LOGIN</button>
+          </div> 
+          <div class="lost-password">
+            <a href="#">Lost your password?</a>
+          </div>
+        </div>
+        <div class="user-coupon">
+          <div class="coupon-link">
+            <i class="fa-regular fa-square"></i>
+            <p>Have a coupon?</p>
+            <a href="#" id="couponLink">Click here to enter your code </a>
+          </div>
+        </div>
+        <div class="coupon-input" id="coupon-part">
+          <p>If you have a coupon code, please apply it below.</p>
+          <input type="text" name="" placeholder="Coupon Code" id="" />
+          <button class="apply-btn">APPLY COUPEN</button>
+        </div>
+        <div class="error-summary" id="errorSummary"></div>
+        <div class="order-details">
+          <div class="billing-details">
+            <h3>Billing Details</h3>
+            <hr />
+            <div class="name-inputs">
+              <div class="fname">
+                <p>FirstName*</p>
+                <input type="text" placeholder="First Name" id="fname" required/>
+              </div>
+              <div class="lname">
+                <p>LastName*</p>
+                <input type="text" placeholder="Last Name" id="lanme" required/>
+              </div>
+            </div>
+            <div class="billing-input">
+              <p>Company name(optional)</p>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="dropdown-input">
+              <p>Country/Region*</p>
+              <div class="dropdown-form">
+                <form>
+                  <select class="select" name="">
+                    <option value="#">Pakistan</option>
+                    <option value="#">USA</option>
+                    <option value="#">Canada</option>
+                    <option value="#">Italy</option>
+                    <option value="#">China</option>
+                    <option value="#">Iran</option>
+                    <option value="#">Afghanistan</option>
+                    <option value="#">Australia</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div class="billing-input">
+              <p>Street adress*</p>
+              <input type="text" placeholder="House number and street name" id="address" required/>
+              <input
+                type="text"
+                placeholder="Appartment,suite,unit,etc.(optional)"
+              />
+            </div>
+            <div class="billing-input">
+              <p>Town / City*</p>
+              <input type="text" placeholder="Town / City" id="town" required/>
+            </div>
+            <div class="dropdown-input">
+              <p>State / County*</p>
+              <div class="dropdown-form">
+                <form>
+                  <select class="select" name="">
+                    <option value="#">Punjab</option>
+                    <option value="#">Sindh</option>
+                    <option value="#">Balochistan</option>
+                    <option value="#">KPK</option>
+                    <option value="#">Gilgit Baltistan</option>
+                    <option value="#">Azad Kashmir</option>
+                    <option value="#">Islamabad</option>
+                    <option value="#">FATA</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div class="billing-input">
+              <p>Post Code / ZIP*</p>
+              <input type="text" placeholder="Post Code" id="zip" required/>
+            </div>
+            <div class="billing-input">
+              <p>Phone*</p>
+              <input type="tel" placeholder="Phone No" id="phone" required/>
+            </div>
+            <div class="billing-input">
+              <p>Email Address*</p>
+              <input type="email" placeholder="Email Address" id="email" required/>
+            </div>
+            <div class="additional-info">
+              <h3>Additional Information</h3>
+            </div>
+            <hr />
+            <div class="order-note">
+              <p>Order notes(optional)</p>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="3"
+                placeholder="Notes about your order, e.g. special notes for delivery."
+              ></textarea>
+            </div>
+          </div>
+          <div class="your-order">
+            <h3>Your Order</h3>
+            <div class="order-heading">
+              <h4>Product</h4>
+              <h4 class="order-total">Subtotal</h4>
+            </div>
+            <hr />
+            <div class="product">
+              <p>Anchor Bracelet - Brown × 1</p>
+              <p class="price">$170.00</p>
+            </div>
+            <hr />
+            <div class="product">
+              <p>Subtotal</p>
+              <p class="price">$170.00</p>
+            </div>
+            <hr />
+            <div class="product">
+              <p>Total</p>
+              <p class="price">$170.00</p>
+            </div>
+            <hr />
+            <!-- <div class="order-checkbox">
+              <form>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    name="payments"
+                    value=" Direct bank transfer"
+                  />
+                  <label for=""> Direct bank transfer</label>
+                </div>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    id="css"
+                    name="payments"
+                    value="Check payments"
+                  />
+                  <label for="css">Check payments</label>
+                </div>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    name="payments"
+                    value="Cash on delivery"
+                  />
+                  <label for="javascript">Cash on delivery</label><br /><br />
+                </div>
+              </form>
+            </div> -->
+            <div class="order-checkbox">
+              <form>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    name="payments"
+                    id="directBankTransfer"
+                    value="Direct bank transfer"
+                  />
+                  <label for="directBankTransfer">Direct bank transfer</label>
+                </div>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    name="payments"
+                    id="checkPayments"
+                    value="Check payments"
+                  />
+                  <label for="checkPayments">Check payments</label>
+                </div>
+                <div class="radio-btn">
+                  <input
+                    type="radio"
+                    name="payments"
+                    id="cashOnDelivery"
+                    value="Cash on delivery"
+                  />
+                  <label for="cashOnDelivery">Cash on delivery</label><br /><br />
+                </div>
+              </form>
+            </div>
+            <!-- <button id="placeorder-btn">Place Order</button> -->
+            
+            <div class="order-btn">
+              <button id="placeorder-btn">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section-7 Done -->
+    <section class="section-7">
+      <hr class="sale-line"></hr>
+       <div class="sale-update">
+         <div class="sale-text">
+           <h1>SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL BRANDS.</h1>
+         </div>
+       </div>
+      <hr class="sale-line"></hr>
+    </section>
+
+    <!-- section-8   Done -->
+    <section class="section-8">
+   <div class="footer">
+     <div class="content">
+     <div class="footer-text">
+       <img src="../images/footer-logo.png" alt="Logo">
+       <h2>The best look anytime, anywhere.</h2>
+     </div>
+     <div class="footer-text">
+       <h4>For Her</h4>
+       <p><a href="#">Women Jeans</a></p>
+       <p><a href="#">Tops and Shirts</a></p>
+       <p><a href="#">Women Jackets</a></p>
+       <p><a href="#">Heels and Flats</a></p>
+       <p><a href="#">Women Accessories</a></p>
+      
+     </div>
+     <div class="footer-text">
+       <h4>For Him</h4>
+       <p><a href="#">Men Jeans</a></p>
+       <p><a href="#">Men Shirts</a></p>
+       <p><a href="#">Men Shoes</a></p>
+       <p><a href="#">Men Accessories</a></p>
+       <p><a href="#">Men Jackets</a></p>
+     </div>
+     <div class="footer-text">
+       <h4 class="address">Subscribe</h4>
+       <div class="email-input">
+        <input type="email" id="subscribeEmail" placeholder="Your Email Here...">
+        <button class="subscribe-btn" id="subscribeButton">Subscribe Now</button>
+      </div>
+     </div>
+   </div>
+   <footer>
+     <hr />
+     <div class="copyright">
+       <p>Copyright © 2023 Brandstore. Powered by Brandstore.</p>
+     </div>
+     <div class="social-icons">
+       <a href="#"><i class="fa-brands fa-facebook"></i></a>
+       <a href="#"><i class="fa-brands fa-youtube"></i></a>
+       <a href="#"><i class="fa-brands fa-twitter"></i></a>
+       <a href="#"><i class="fa-brands fa-instagram"></i></a>
+       <a href="#"><i class="fa-brands fa-google"></i></a>
+       <a href="#"><i class="fa-brands fa-yelp"></i></a>
+     </div>
+   </footer>
+      </div>
+    </section>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
